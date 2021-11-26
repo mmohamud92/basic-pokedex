@@ -6,11 +6,11 @@ body {
 }
 
 .banner {
-    background: #bf9355;
+    background: #b31b1b;
 }
 
 .banner-content {
-    padding: 1.75%;
+    padding: 21px;
 }
 
 .search {
@@ -27,11 +27,11 @@ body {
     height: 20px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: #ccbea9;
+    color: #b57979;
 }
 
 .searchPokemon:focus{
-    color: #bf9355;
+    color: #b31b1b;
 }
 
 .searchButton {
@@ -43,7 +43,7 @@ body {
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 20px;
-    background: #bf9355;
+    background: #b31b1b;
 }
 
 
@@ -55,7 +55,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.circle-parent, .type-parent {
+.circle-parent, .type-parent, .info-parent {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,5 +66,18 @@ body {
     width: 130px;
     background-color: #fff;
     border-radius: 50%;
+    box-shadow: 0 5px 60px 0 rgba(0,0,0,0.25);
     margin-top: 4%;
+    transform: rotateX(25deg);
+
+}
+
+.info-box {
+    height: 300px;
+    width: 750px;
+    background-color: #f2f2f2;
+    border: 5px solid #b31b1b;
+    z-index: 1;
+    margin-top: 2.5%;
+    border-radius: 100px;
 }

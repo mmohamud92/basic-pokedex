@@ -5,6 +5,14 @@ body {
     background-color: #f2f2f2;
 }
 
+.banner {
+    background: #bf9355;
+}
+
+.banner-content {
+    padding: 1.75%;
+}
+
 .search {
     width: 100%;
     position: relative;
@@ -13,7 +21,7 @@ body {
 
 .searchPokemon {
     width: 100%;
-    border: 3px solid #bf9355;
+    border: 3px solid #fff;
     border-right: none;
     padding: 5px;
     height: 20px;
@@ -29,7 +37,7 @@ body {
 .searchButton {
     width: 40px;
     height: 36px;
-    border: 1px solid #bf9355;
+    border: 1px solid #fff;
     text-align: center;
     color: #fff;
     border-radius: 0 5px 5px 0;
@@ -45,4 +53,18 @@ body {
     top: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.circle-parent, .type-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    height: 130px;
+    width: 130px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-top: 4%;
 }

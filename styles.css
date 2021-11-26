@@ -1,0 +1,48 @@
+/* font-family: 'Bebas Neue', cursive; */
+
+body {
+    font-family: 'Bebas Neue', cursive;
+    background-color: #f2f2f2;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.searchPokemon {
+    width: 100%;
+    border: 3px solid #bf9355;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #ccbea9;
+}
+
+.searchPokemon:focus{
+    color: #bf9355;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #bf9355;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    background: #bf9355;
+}
+
+
+.wrap{
+    width: 30%;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -63,7 +63,7 @@ body {
 }
 
 .sprite-location {
-    margin-top: 3%;
+    margin-top: 1%;
     margin-left: 1%;
     position: absolute;
 }
@@ -74,7 +74,7 @@ body {
     background-color: #fff;
     border-radius: 50%;
     box-shadow: 0 5px 60px 0 rgba(0,0,0,0.25);
-    margin-top: 2%;
+    margin-top: 0%;
     transform: rotateX(35deg);
     position: relative;
     z-index: -1;
@@ -87,6 +87,33 @@ body {
     background-color: #f2f2f2;
     border: 5px solid #b31b1b;
     z-index: 1;
-    margin-top: 0%;
+    margin-top: 3%;
     border-radius: 100px;
 }
+
+/* .type {
+    height: 25px;
+    width: 70px;
+    background-color: black;
+    z-index: 1;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .type-two {
+    height: 25px;
+    width: 70px;
+    background-color: black;
+    z-index: 1;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.type-text {
+    z-index: 2;
+    color: white;
+    text-align: center;
+    margin-top: 4.5%;
+} */

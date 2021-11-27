@@ -14,6 +14,8 @@ let spriteLocation = document.querySelector(`.sprite-location`)
 let typeOneBox = document.querySelector(`.type`);
 let typeOneText = document.querySelector(`.type-text`);
 
+//div for typeOneWeakness box
+
 // select div for typeTwo box
 
 let typeTwoBox = document.querySelector(`.type-two`);
@@ -31,6 +33,29 @@ let pokedexDescription = document.querySelector(`.pokedex-entry`)
 let textName = document.querySelector(`.text-name`);
 let selectedName = document.querySelector(`.pokemon-name`);
 
+// select type to append text type and textEmphasisStyle: 
+let textId = document.querySelector(`.text-id`);
+let selectedId = document.querySelector(`.pokemon-id`);
+
+//select height div in order to append to isolation: 
+let textHeight = document.querySelector(`.text-height`);
+let selectedHeight = document.querySelector(`.pokemon-height`)
+
+//select weight div in order to append to isolation: 
+let textWeight = document.querySelector(`.text-weight`);
+let selectedWeight = document.querySelector(`.pokemon-weight`)
+
+// select nextSprite in order to append
+let nextPokemonSprite = document.querySelector(`.post-evolution`)
+let nextPokemonText = document.querySelector(`.post-evolution-text`)
+
+// select previousSprite in order to append
+let previousPokemonSprite = document.querySelector(`.pre-evolution`)
+let previousPokemonText = document.querySelector(`.pre-evolution-text`)
+
+//to make image clickable
+let nextButton = document.querySelector(`.post-evolution`)
+
 function getEnter(enter) {
     enter.preventDefault();
     if (enter.keyCode === 13) {
@@ -39,7 +64,9 @@ function getEnter(enter) {
 }
 
 function getSearch(userInput) {
-    userInput = enterInput.value;
+    userInput = (enterInput.value).toLowerCase();
+    getPokemon(userInput);
+    getDescription(userInput);
     typeOneBox.style = null;
     typeOneText.innerHTML = ``;
     typeTwoBox.style = null;
@@ -49,8 +76,17 @@ function getSearch(userInput) {
     pokedexDescription.innerHTML = ``;
     selectedName.innerHTML = ``;
     textName.innerHTML = ``;
-    getPokemon(userInput);
-    getDescription(userInput)
+    selectedId.innerHTML = ``;
+    textId.innerHTML = ``;
+    selectedHeight.innerHTML = ``;
+    textHeight.innerHTML = ``;
+    selectedWeight.innerHTML = ``;
+    textWeight.innerHTML = ``;
+    nextPokemonSprite.innerHTML = ``;
+    nextPokemonText.innerHTML = ``;
+    previousPokemonSprite.innerHTML = ``;
+    previousPokemonText.innerHTML = ``;
+ 
 }
 
 async function getPokemon(pokemon) {
@@ -69,6 +105,57 @@ async function getPokemon(pokemon) {
     img.style.height = `200px`;
     img.style.width = `200px`;
 
+    function getNextPokemon() {
+        let nextPoke = pokemonId + 1;
+        getPokemon(nextPoke);
+        getDescription(nextPoke);
+        typeOneBox.style = null;
+        typeOneText.innerHTML = ``;
+        typeTwoBox.style = null;
+        typeTwoText.innerHTML = ``;
+        colourCircle.style.background = ``
+        spriteLocation.innerHTML = ``;
+        pokedexDescription.innerHTML = ``;
+        selectedName.innerHTML = ``;
+        textName.innerHTML = ``;
+        selectedId.innerHTML = ``;
+        textId.innerHTML = ``;
+        selectedHeight.innerHTML = ``;
+        textHeight.innerHTML = ``;
+        selectedWeight.innerHTML = ``;
+        textWeight.innerHTML = ``;
+        nextPokemonSprite.innerHTML = ``;
+        nextPokemonText.innerHTML = ``;
+        previousPokemonSprite.innerHTML = ``;
+        previousPokemonText.innerHTML = ``;
+    }
+
+    function getPreviousPokemon() {
+        let nextPoke = pokemonId - 1;
+        getPokemon(nextPoke);
+        getDescription(nextPoke);
+        typeOneBox.style = null;
+        typeOneText.innerHTML = ``;
+        typeTwoBox.style = null;
+        typeTwoText.innerHTML = ``;
+        colourCircle.style.background = ``
+        spriteLocation.innerHTML = ``;
+        pokedexDescription.innerHTML = ``;
+        selectedName.innerHTML = ``;
+        textName.innerHTML = ``;
+        selectedId.innerHTML = ``;
+        textId.innerHTML = ``;
+        selectedHeight.innerHTML = ``;
+        textHeight.innerHTML = ``;
+        selectedWeight.innerHTML = ``;
+        textWeight.innerHTML = ``;
+        nextPokemonSprite.innerHTML = ``;
+        nextPokemonText.innerHTML = ``;
+        previousPokemonSprite.innerHTML = ``;
+        previousPokemonText.innerHTML = ``;
+    }
+
+
     // find type/types and append to the relevant div
     let quoteTypeOne = JSON.stringify(data.types[0].type.name)
     let typeOne = quoteTypeOne.replaceAll('"', '')
@@ -86,10 +173,9 @@ async function getPokemon(pokemon) {
         typeColour(typeOneCap);
     }
 
-    // to find description that is english and append it
-    if (JSON.stringify(data.types.length) > 1) {
+        if (JSON.stringify(data.types.length) > 1) {
         colourCircle.style.background = ``;
-        colourCircle.style.background = `linear-gradient(to bottom right, ${typeOneBox.style.backgroundColor}, ${typeTwoBox.style.backgroundColor})`
+        colourCircle.style.background = `linear-gradient(to bottom right, ${typeOneBox.style.backgroundColor}, ${typeTwoBox.style.backgroundColor}`;
     } 
     else {
         colourCircle.style.background = ``;
@@ -103,6 +189,56 @@ async function getPokemon(pokemon) {
 
     selectedName.append(pokemonNameCap)
     textName.append(`Name:`)
+
+
+    // to find ID number and append it to the right
+    let quoteId = JSON.stringify(data.id);
+    let pokemonIdString = quoteId.replaceAll('"', '')
+    let pokemonId = Number(pokemonIdString);
+    
+    selectedId.append(`#${pokemonId}`)
+    textId.append(`ID:`)
+    
+    // Append height to height div
+    let quoteHeight = JSON.stringify(data.height);
+    let pokemonHeightString = quoteHeight.replaceAll('"', '');
+    let pokemonHeight = Number(pokemonHeightString);
+    selectedHeight.append(`${pokemonHeight/10}m`);
+    textHeight.append(`Height:`);
+
+    // Append height to height div
+    let quoteWeight = JSON.stringify(data.weight);
+    let pokemonWeightString = quoteWeight.replaceAll('"', '');
+    let pokemonWeight = Number(pokemonWeightString);
+    selectedWeight.append(`${pokemonWeight/10}kg`);
+    textWeight.append(`weight:`);
+
+    // Append next pokemons sprite to picture
+        if (pokemonId < 898) {
+    let nextPokemonImg = document.createElement(`img`);
+    nextPokemonImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId + 1}.png`;
+    nextPokemonSprite.appendChild(nextPokemonImg);
+    nextPokemonImg.style.height = `150px`;
+    nextPokemonImg.style.width = `150px`;
+    nextPokemonText.append(`next Pokémon`);
+    nextPokemonImg.style.cursor = `pointer`;
+    nextPokemonImg.addEventListener(`click`, getNextPokemon)
+
+    }
+
+    // Append previous pokemons sprite to picture
+        if ((pokemonId > 1) && (pokemonId <= 898) ) {
+    let previousPokemonImg = document.createElement(`img`);
+    previousPokemonImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId - 1}.png`;
+    previousPokemonSprite.appendChild(previousPokemonImg);
+    previousPokemonImg.style.height = `150px`;
+    previousPokemonImg.style.width = `150px`;
+    previousPokemonText.append(`previous Pokémon`);
+    previousPokemonImg.style.cursor = `pointer`;
+    previousPokemonImg.addEventListener(`click`, getPreviousPokemon)
+    }
+
+
 }
 
 function typeColour(colour) {
@@ -211,18 +347,17 @@ function typeTwoColour(colourTwo) {
     typeTwoText.style.textAlign = `center`;
     typeTwoText.style.marginTop = `4.5%`;
     }
+    
+      // to find description that is english and append it
 
     async function getDescription(description) {
         let response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${description}/`);
-        console.log(response)
         let data = await response.json();
-        console.log(data);
-        console.log(data.flavor_text_entries[0].language.name)
-        console.log(data.flavor_text_entries[0].flavor_text)
         
         for (let i = 0; i < data.flavor_text_entries.length; i++){
             if (data.flavor_text_entries[i].language.name === `en`) {
                 let newEntry = `"${data.flavor_text_entries[i].flavor_text}"`;
+                console.log(newEntry)
                 pokedexDescription.append(newEntry)
                 break;
             } 

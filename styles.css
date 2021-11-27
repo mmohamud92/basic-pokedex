@@ -111,6 +111,7 @@ body {
     margin-top: 10%;
 }
 
+
 /* .pokemon-name {
     margin-top: 2%;
     font-size: large;
@@ -160,10 +161,10 @@ body {
 }
 
 .table {
-    font-size: 20px;
+    font-size: 30px;
 }
 
-.name, .id, .height, .weight, .weakness, .super-weakness {
+.name, .id, .height, .weight, .weakness, .super-weakness, .immunity {
     position: absolute;
 } 
 
@@ -172,54 +173,58 @@ body {
 }
 
 .id {
-    margin-top: -4.5%;
-}
-
-.height {
     margin-top: -1.5%;
 }
 
-.weight {
-    margin-top: 1.5%;
-}
-
-.weakness {
+.height {
     margin-top: 4.5%;
 }
 
-.super-weakness {
+.weight {
+    margin-top: 10.5%;
+}
+
+/* .immunity {
+    margin-top: 4.5%;
+}
+
+.weakness {
     margin-top: 7.5%;
 }
 
-.text-name, .text-id, .text-height, .text-weight, .text-weakness, .text-super-weakness {
+.super-weakness {
+    margin-top: 10.5%;
+} */
+
+.text-name, .text-id, .text-height, .text-weight, .text-weakness, .text-super-weakness, .text-immunity {
     width: 150px;
     padding-right: 100px;
 }
 
-.pre-evolution-img {
+.pre-evolution {
     height: 125px;
     width: 125px;
     position: absolute;
     top: 140px;
-    left: 40px;
+    left: 25px;
 }
 
-.post-evolution-img {
+.post-evolution {
     height: 125px;
     width: 125px;
     position: absolute;
     top: 140px;
-    left: 605px;
+    left: 580px;
  }
 
  .pre-evolution-text {
      position: absolute;
-     left: 65px;
+     left: 50px;
      top: 120px;
  }
 
  .post-evolution-text {
     position: absolute;
-    left: 625px;
+    left: 615px;
     top: 120px;
 }

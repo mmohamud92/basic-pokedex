@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>codingMohamed's Pokedex!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -41,14 +42,43 @@
     </div>
     <div class="info-parent">
         <div class="info-box">
-            <div class="Pokedex-entry"></div>
-            <div class="height-weight"></div>
-            <div class="weak"></div>
-            <div class="evolved-from-parent">
-                <div class="evolved-from"></div>
-            </div>
-            <div class="evolves-to-parent">
-                <div class="evolves-to"></div>
+            <div class="pokedex-entry"></div>
+            <table class="name-table table">
+                <tr class="name">
+                    <td class="text-name"></td>
+                    <td class="pokemon-name"></td>
+                </tr>
+                <tr class="id">
+                    <td class="text-id">ID:</td>
+                    <td class="pokemon-id">25</td>
+                </tr>
+                <tr class="height">
+                    <td class="text-height">height:</td>
+                    <td class="pokemon-height">185</td>
+                </tr>
+                <tr class="weight">
+                    <td class="text-weight">Weight</td>
+                    <td class="pokemon-weight">80</td>
+                </tr>
+                <tr class="weakness">
+                    <td class="text-weakness">Weak against:</td>
+                    <td class="weakness-one">Fire</td>
+                    <td class="weakness-two">Water</td>
+                </tr>
+                <tr class="super-weakness">
+                    <td class="text-super-weakness">Super weak against:</td>
+                    <td class="text-evolution-to">Grass</td>
+                </tr>
+            </table>
+            <div class="evolutions">
+                <div class="pre-evolution-text"> Pre Evolution</div>
+                <div class="post-evolution-text">Post Evolution</div>
+                <div class="pre-evolution">
+                    <img src="https://pngimg.com/uploads/chrome_logo/chrome_logo_PNG2.png" class="pre-evolution-img">
+                </div>
+                <div class="post-evolution">
+                    <img src="https://pngimg.com/uploads/chrome_logo/chrome_logo_PNG2.png" class="post-evolution-img">
+                </div>
             </div>
         </div>
         <script src="main.js" defer></script>

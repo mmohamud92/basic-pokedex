@@ -62,6 +62,10 @@ body {
     align-items: center;
 }
 
+/* .circle-parent {
+    border: 5px solid black;
+} */
+
 .sprite-location {
     margin-top: 1%;
     margin-left: 1%;
@@ -75,40 +79,69 @@ body {
     border-radius: 50%;
     box-shadow: 0 5px 60px 0 rgba(0,0,0,0.25);
     margin-top: 0%;
-    transform: rotateX(35deg);
+    transform: rotateX(40deg);
     position: relative;
     z-index: -1;
+    border: 5px solid white;
 
 }
 
 .info-box {
-    height: 300px;
+    height: 280px;
     width: 750px;
     background-color: #f2f2f2;
     border: 5px solid #b31b1b;
     z-index: 1;
-    margin-top: 3%;
+    margin-top: 300px;
     border-radius: 100px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
 }
 
-/* .type {
-    height: 25px;
-    width: 70px;
-    background-color: black;
-    z-index: 1;
-    border-radius: 25px;
+.table {
+    width: 100%;
+    font-size: 22px;
     justify-content: center;
     align-items: center;
-} */
+    margin-left: 25%;
+}
 
-/* .type-two {
+.name-table {
+    margin-top: 10%;
+}
+
+/* .pokemon-name {
+    margin-top: 2%;
+    font-size: large;
+}
+
+.text-name {
+    text-align: center;
+    width: 75%;
+    float: inline-start;
+}
+
+ /* .type {
     height: 25px;
     width: 70px;
-    background-color: black;
+    background-color: white;
     z-index: 1;
     border-radius: 25px;
     justify-content: center;
     align-items: center;
+    border: 2px solid #b31b1b;
+} 
+
+ .type-two-text {
+    height: 25px;
+    width: 70px;
+    background-color: white;
+    z-index: 1;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #b31b1b;
 }
 
 .type-text {
@@ -116,4 +149,77 @@ body {
     color: white;
     text-align: center;
     margin-top: 4.5%;
-} */
+}  */
+
+.pokedex-entry {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    margin-top: 2%;
+}
+
+.table {
+    font-size: 20px;
+}
+
+.name, .id, .height, .weight, .weakness, .super-weakness {
+    position: absolute;
+} 
+
+.name {
+    margin-top: -7.5%;
+}
+
+.id {
+    margin-top: -4.5%;
+}
+
+.height {
+    margin-top: -1.5%;
+}
+
+.weight {
+    margin-top: 1.5%;
+}
+
+.weakness {
+    margin-top: 4.5%;
+}
+
+.super-weakness {
+    margin-top: 7.5%;
+}
+
+.text-name, .text-id, .text-height, .text-weight, .text-weakness, .text-super-weakness {
+    width: 150px;
+    padding-right: 100px;
+}
+
+.pre-evolution-img {
+    height: 125px;
+    width: 125px;
+    position: absolute;
+    top: 140px;
+    left: 40px;
+}
+
+.post-evolution-img {
+    height: 125px;
+    width: 125px;
+    position: absolute;
+    top: 140px;
+    left: 605px;
+ }
+
+ .pre-evolution-text {
+     position: absolute;
+     left: 65px;
+     top: 120px;
+ }
+
+ .post-evolution-text {
+    position: absolute;
+    left: 625px;
+    top: 120px;
+}
